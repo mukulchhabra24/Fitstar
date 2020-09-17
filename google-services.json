@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "257610154614",
+    "firebase_url": "https://fitstar-88162.firebaseio.com",
+    "project_id": "fitstar-88162",
+    "storage_bucket": "fitstar-88162.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257610154614:android:86cfa522d2348136b79557",
+        "android_client_info": {
+          "package_name": "com.example.fitstar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257610154614-ja5eugr84q9uh0i74dk4i5g73raeptvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQFYQGMWa4_6-EiA7Mi8OdchK4lSibrig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257610154614-ja5eugr84q9uh0i74dk4i5g73raeptvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
