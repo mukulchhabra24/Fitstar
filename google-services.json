@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "257610154614-16o6pjh7qogg5e4qmvebudq9b89ibk9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitstar",
+            "certificate_hash": "8160b582ae2c8f85dbbbaeb8daf291bf0e73e5f1"
+          }
+        },
+        {
           "client_id": "257610154614-ja5eugr84q9uh0i74dk4i5g73raeptvh.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -28,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "257610154614-ja5eugr84q9uh0i74dk4i5g73raeptvh.apps.googleusercontent.com",
+              "client_id": "257610154614-vhf7q6hdemfk2s901bdv3g41ipcfah29.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
