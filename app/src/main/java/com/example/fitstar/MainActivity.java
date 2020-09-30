@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -28,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 101;
     private FirebaseAuth mAuth;
     private Button btnGoogle;
+    private Button signout;
     GoogleSignInClient mGoogleSignInClient;
+
+
+
 
 
     @Override
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnGoogle = findViewById(R.id.btnGoogle);
+        signout=findViewById(R.id.signout);
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -49,11 +55,37 @@ public class MainActivity extends AppCompatActivity {
                 signIn();
             }
         });
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    // ...
+                    case R.id.signout:
+                        signOut();
+                        break;
+                    // ...
+                }
+            }
+        });
 
     }
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    private void signOut() {
+        FirebaseAuth.getInstance().signOut();
+
+        mGoogleSignInClient.signOut()
+
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(MainActivity.this,"Signed out Succesfully", Toast.LENGTH_LONG).show();
+
+                    }
+                });
     }
 
     @Override
@@ -68,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                // Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account.getIdToken());
+                Toast.makeText(MainActivity.this,"Logged in Succesfully", Toast.LENGTH_LONG).show();
+
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
 
@@ -102,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this,MainActivity.class);
         startActivity(intent);
     }
+
 
 
 }
