@@ -1,10 +1,13 @@
 package com.example.fitstar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,9 +31,29 @@ public class Second_Activity extends AppCompatActivity {
         items.add("Rowing");
         items.add("leg press");
 
-        itemsAdapter itemsAdapter = new itemsAdapter(items);
+        final itemsAdapter itemsAdapter = new itemsAdapter(items);
         recyclerView1.setAdapter(itemsAdapter);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                Intent i = new Intent(Second_Activity.this, thirdActivity.class);
+                i.putExtra("item",itemsAdapter.getItem());
+                startActivity(i);
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
 
     }
 }

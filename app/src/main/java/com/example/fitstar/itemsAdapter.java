@@ -12,8 +12,13 @@ import java.util.List;
 
 public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> {
     List<String> items;
+    String item;
     public itemsAdapter(List<String> items) {
         this.items=items;
+    }
+
+    public String getItem() {
+        return item;
     }
 
     @NonNull
@@ -26,7 +31,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String item= items.get(position);
+        item= items.get(position);
         holder.bind(item);
 
     }
