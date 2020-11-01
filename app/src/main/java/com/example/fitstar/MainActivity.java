@@ -101,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
                // Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account.getIdToken());
                 Toast.makeText(MainActivity.this,"Logged in Succesfully", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, Second_Activity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(MainActivity.this, Second_Activity.class);
+                //startActivity(intent);
 
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(MainActivity.this,MainActivity.class);
+        Intent intent = new Intent(MainActivity.this,Second_Activity.class);
         startActivity(intent);
     }
 
