@@ -31,10 +31,10 @@ public class Second_Activity extends AppCompatActivity {
         items.add("Rowing");
         items.add("leg press");
 
-        final itemsAdapter itemsAdapter = new itemsAdapter(items);
+        final itemsAdapter itemsAdapter = new itemsAdapter(this, items);
         recyclerView1.setAdapter(itemsAdapter);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+     /*   recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
                 Intent i = new Intent(Second_Activity.this, thirdActivity.class);
@@ -53,7 +53,7 @@ public class Second_Activity extends AppCompatActivity {
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
 
             }
-        });
+        });*/
 
     }
 }

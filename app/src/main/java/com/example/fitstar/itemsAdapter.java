@@ -1,8 +1,11 @@
 package com.example.fitstar;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,8 +16,10 @@ import java.util.List;
 public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> {
     List<String> items;
     String item;
-    public itemsAdapter(List<String> items) {
+    Context context;
+    public itemsAdapter(Context context, List<String> items) {
         this.items=items;
+        this.context=context;
     }
 
     public String getItem() {
@@ -30,9 +35,18 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         item= items.get(position);
         holder.bind(item);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent( context, thirdActivity.class);
+                i.putExtra("item",items.get(position));
+                context.startActivity(i);
+            }
+        });
+
 
     }
 
@@ -52,6 +66,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
 
         public void bind(String item) {
             tvItem.setText(item);
+
 
 
         }
