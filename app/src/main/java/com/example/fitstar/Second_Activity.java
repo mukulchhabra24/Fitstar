@@ -29,7 +29,7 @@ public class Second_Activity extends AppCompatActivity {
         items.add("Bicep curls");
         items.add("Bench Press");
         items.add("Rowing");
-        items.add("leg press");
+        items.add("Leg Press");
 
         final itemsAdapter itemsAdapter = new itemsAdapter(this, items);
         recyclerView1.setAdapter(itemsAdapter);
