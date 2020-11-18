@@ -44,6 +44,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolder> 
                 Intent i = new Intent( context, thirdActivity.class);
                 i.putExtra("item",items.get(position));
                 context.startActivity(i);
+
             }
         });
 

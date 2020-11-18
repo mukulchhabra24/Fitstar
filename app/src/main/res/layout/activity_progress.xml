@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".progressActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Effectiveness of your workout:"
+        android:textSize="24sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:layout_marginBottom="181dp"
+        android:indeterminateOnly="false"
+        android:max="100"
+        android:progress="70"
+        android:progressDrawable="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/tvProgress"
+        android:layout_width="190dp"
+        android:layout_height="136dp"
+        android:layout_alignStart="@+id/progressBar"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_alignTop="@+id/progressBar"
+        android:layout_alignEnd="@+id/progressBar"
+        android:layout_alignRight="@+id/progressBar"
+        android:layout_alignBottom="@+id/progressBar"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="134dp"
+        android:text="70%"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="@+id/progressBar" />
+
+</RelativeLayout>

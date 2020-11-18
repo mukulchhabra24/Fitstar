@@ -7,7 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,13 +21,17 @@ public class Second_Activity extends AppCompatActivity {
     List<String> items;
     RecyclerView recyclerView1;
     itemsAdapter itemsAdapter;
-
+    Button btnProgress;
+    List<Float> ratings;
+    TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_);
         recyclerView1= findViewById(R.id.recyclerView1);
+        btnProgress=findViewById(R.id.btnProgress);
+        tv1=findViewById(R.id.textView1);
 
         items= new ArrayList<>();
         items.add("Bicep curls");
@@ -34,6 +42,20 @@ public class Second_Activity extends AppCompatActivity {
         final itemsAdapter itemsAdapter = new itemsAdapter(this, items);
         recyclerView1.setAdapter(itemsAdapter);
         recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+
+        ratings= new ArrayList<>();
+
+
+        btnProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(Second_Activity.this, progressActivity.class);
+                startActivity(i);
+            }
+        });
+
+
+
      /*   recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
