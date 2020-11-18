@@ -57,4 +57,28 @@
         app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="@+id/progressBar" />
 
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="135dp"
+        android:layout_height="94dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="250dp"
+        android:layout_marginRight="165dp"
+        android:layout_marginBottom="52dp"
+        android:text="Save Workout" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="135dp"
+        android:layout_height="94dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="52dp"
+        android:text="Clear this workout" />
+
 </RelativeLayout>

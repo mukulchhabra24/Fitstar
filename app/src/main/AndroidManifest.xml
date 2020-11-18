@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".progressActivity"></activity>
+        <activity android:name=".PreviousActivity"></activity>
+        <activity android:name=".progressActivity" />
         <activity android:name=".thirdActivity" />
         <activity android:name=".Second_Activity" />
         <activity android:name=".MainActivity">
