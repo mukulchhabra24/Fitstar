@@ -23,18 +23,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
-        android:id="@+id/btnS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvPrev"
-        android:layout_marginTop="83dp"
-        android:text="Save" />
-
-    <Button
         android:id="@+id/btnDelete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnS"
+        android:layout_below="@+id/tvPrev"
         android:layout_marginTop="30dp"
         android:text="Delete All History" />
 </RelativeLayout>
