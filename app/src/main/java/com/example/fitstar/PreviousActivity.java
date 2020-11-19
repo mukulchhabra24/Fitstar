@@ -22,7 +22,6 @@ import java.util.List;
 import static com.example.fitstar.globalVariables.previous_workouts;
 
 public class PreviousActivity extends AppCompatActivity {
-    Button btns;
     Button btnClear;
     TextView tvPrev;
 
@@ -31,7 +30,6 @@ public class PreviousActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_previous);
 
-        btns = findViewById(R.id.btnS);
         btnClear = findViewById(R.id.btnDelete);
         tvPrev=findViewById(R.id.tvPrev);
 
