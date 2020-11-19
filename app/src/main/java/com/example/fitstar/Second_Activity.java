@@ -24,6 +24,7 @@ public class Second_Activity extends AppCompatActivity {
     Button btnProgress;
     List<Float> ratings;
     TextView tv1;
+    Button btnPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,19 @@ public class Second_Activity extends AppCompatActivity {
         recyclerView1= findViewById(R.id.recyclerView1);
         btnProgress=findViewById(R.id.btnProgress);
         tv1=findViewById(R.id.textView1);
+        btnPrev=findViewById(R.id.btnPrev);
 
         items= new ArrayList<>();
         items.add("Bicep curls");
         items.add("Bench Press");
         items.add("Rowing");
         items.add("Leg Press");
+        items.add("Deadlift");
+        items.add("Cable Reverse Fly");
+        items.add("Leg curls");
+        items.add("Squats");
+
+
 
         final itemsAdapter itemsAdapter = new itemsAdapter(this, items);
         recyclerView1.setAdapter(itemsAdapter);
@@ -51,6 +59,14 @@ public class Second_Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i= new Intent(Second_Activity.this, progressActivity.class);
                 startActivity(i);
+            }
+        });
+        btnPrev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(Second_Activity.this, PreviousActivity.class);
+                startActivity(i);
+
             }
         });
 

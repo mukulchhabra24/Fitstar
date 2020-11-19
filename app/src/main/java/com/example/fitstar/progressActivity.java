@@ -3,12 +3,18 @@ package com.example.fitstar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,10 +52,14 @@ public class progressActivity extends AppCompatActivity {
         Pb.setProgress((int) progress);
         tvProg.setText(Float.toString(progress));
 
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadPrevWorkouts();
                 previous_workouts.add((int) progress);
+
+                saveWorkout();
                 Toast.makeText(progressActivity.this,"Workout Saved", Toast.LENGTH_LONG).show();
             }
         });
@@ -74,5 +84,30 @@ public class progressActivity extends AppCompatActivity {
 
 
 
+    }
+    public File getDataFile()
+    {
+        return new File(getFilesDir(), "data.txt");
+    }
+    public void loadPrevWorkouts() {
+        try {
+            previous_workouts.clear();
+            List<String> s = new ArrayList<>(FileUtils.readLines(getDataFile(), Charset.defaultCharset()));
+            for(String i: s)
+            {
+                previous_workouts.add((Integer.parseInt(i)));
+            }
+        } catch (Exception ex) {
+            Log.e("MainActivity", "Error reading Items", ex);
+            previous_workouts= new ArrayList<>();
+        }
+    }
+    public void saveWorkout()
+    {
+        try {
+            FileUtils.writeLines(getDataFile(),previous_workouts);
+        } catch (IOException e) {
+            Log.e("MainActivity", "Error writing Items", e);
+        }
     }
 }
