@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="61dp"
         android:layout_weight="1"
-        android:text="The muscles that are sore are:" />
+        android:text="The muscles that are sore are:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/soreView"
@@ -20,7 +21,8 @@
         android:layout_alignBottom="@+id/textView"
         android:layout_marginBottom="-66dp"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/TextView2"
@@ -28,7 +30,8 @@
         android:layout_height="61dp"
         android:layout_alignBottom="@+id/soreView"
         android:layout_marginBottom="-63dp"
-        android:text="Enter Level of Soreness" />
+        android:text="Enter Level of Soreness"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <RatingBar
         android:id="@+id/ratingBar"
