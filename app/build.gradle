@@ -39,6 +39,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.4.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
     implementation 'commons-io:commons-io:2.6'
+    implementation 'com.jjoe64:graphview:4.2.2'
 
  
 

@@ -2,6 +2,7 @@ package com.example.fitstar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import org.apache.commons.io.FileUtils;
 
@@ -23,7 +28,8 @@ import static com.example.fitstar.globalVariables.previous_workouts;
 
 public class PreviousActivity extends AppCompatActivity {
     Button btnClear;
-    TextView tvPrev;
+    GraphView graph;
+    TextView tvInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,28 +37,35 @@ public class PreviousActivity extends AppCompatActivity {
         setContentView(R.layout.activity_previous);
 
         btnClear = findViewById(R.id.btnDelete);
-        tvPrev=findViewById(R.id.tvPrev);
+        graph= (GraphView)findViewById(R.id.graph);
+        tvInfo=findViewById(R.id.tvInfo);
 
         loadPrevWorkouts();
         StringBuilder builder = new StringBuilder();
-        for(int i : previous_workouts)
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
+       /* for(int i : previous_workouts)
         {
             builder.append("" + i + " ");
-        }
+        }*/
        // Toast.makeText(PreviousActivity.this, builder, Toast.LENGTH_LONG).show();
-        tvPrev.setText(builder);
+        //tvInfo.setText(builder);
+        int x;
+        for(int i=0;i<previous_workouts.size();i++)
+        {
+            x= previous_workouts.get(i);
+            series.appendData(new DataPoint(i,x),true,previous_workouts.size());
+        }
+
+        graph.addSeries(series);
 
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 previous_workouts.clear();
                 saveWorkout();
-                StringBuilder b = new StringBuilder();
-                for(int i : previous_workouts)
-                {
-                    b.append("" + i + " ");
-                }
-                tvPrev.setText(b);
+                Toast.makeText(PreviousActivity.this, "Data deleted", Toast.LENGTH_LONG).show();
+                Intent i= new Intent(PreviousActivity.this, Second_Activity.class);
+                startActivity(i);
 
             }
         });
