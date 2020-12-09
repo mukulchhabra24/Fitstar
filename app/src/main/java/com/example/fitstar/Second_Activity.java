@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.ActionBar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +31,8 @@ public class Second_Activity extends AppCompatActivity {
     List<Float> ratings;
     TextView tv1;
     Button btnPrev;
+    Button btnSignOut;
+    GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,10 @@ public class Second_Activity extends AppCompatActivity {
         btnProgress=findViewById(R.id.btnProgress);
         tv1=findViewById(R.id.textView1);
         btnPrev=findViewById(R.id.btnPrev);
+        btnSignOut= findViewById(R.id.btnSignOut);
+
+
+
 
         items= new ArrayList<>();
         items.add("Bicep curls");
@@ -69,10 +81,34 @@ public class Second_Activity extends AppCompatActivity {
 
             }
         });
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                signOut();
+                Intent i= new Intent(Second_Activity.this, MainActivity.class);
+                startActivity(i);
 
 
+            }
+        });
 
-     /*   recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+    }
+    private void signOut(){
+        FirebaseAuth.getInstance().signOut();
+
+        mGoogleSignInClient.signOut()
+
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(Second_Activity.this,"Signed out Succesfully", Toast.LENGTH_LONG).show();
+
+                    }
+                });
+    }
+}
+   /*   recyclerView1.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
                 Intent i = new Intent(Second_Activity.this, thirdActivity.class);
@@ -92,6 +128,3 @@ public class Second_Activity extends AppCompatActivity {
 
             }
         });*/
-
-    }
-}
