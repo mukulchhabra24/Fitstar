@@ -14,7 +14,7 @@
         <activity android:name=".PreviousActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".progressActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".thirdActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Second_Activity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".Second_Activity" android:theme="@style/AppTheme" />
         <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
 
             <intent-filter>

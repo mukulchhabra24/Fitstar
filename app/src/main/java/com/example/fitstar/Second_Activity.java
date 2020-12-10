@@ -1,21 +1,20 @@
 package com.example.fitstar;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.app.ActionBar;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +33,8 @@ public class Second_Activity extends AppCompatActivity {
     Button btnSignOut;
     GoogleSignInClient mGoogleSignInClient;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,13 @@ public class Second_Activity extends AppCompatActivity {
         tv1=findViewById(R.id.textView1);
         btnPrev=findViewById(R.id.btnPrev);
         btnSignOut= findViewById(R.id.btnSignOut);
+        getSupportActionBar().hide();
+
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
 
 
@@ -54,8 +62,23 @@ public class Second_Activity extends AppCompatActivity {
         items.add("Leg Press");
         items.add("Deadlift");
         items.add("Cable Reverse Fly");
-        items.add("Leg curls");
+        items.add("Leg Curl");
         items.add("Squats");
+        items.add("Dips");
+        items.add("Shoulder Press");
+        items.add("Cable Fly");
+        items.add("Dumbbell Press");
+        items.add("Lateral Raises");
+        items.add("Hammer Curl");
+        items.add("Lunges");
+        items.add("Pushups");
+        items.add("Calf Raises");
+        items.add("Hip Thrusts");
+        items.add("Glute Kickbacks");
+        items.add("Sit ups");
+        items.add("Crunches");
+        items.add("Plank");
+        items.add("Chin Ups");
 
 
 
@@ -81,7 +104,7 @@ public class Second_Activity extends AppCompatActivity {
 
             }
         });
-        btnSignOut.setOnClickListener(new View.OnClickListener() {
+       btnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -93,7 +116,9 @@ public class Second_Activity extends AppCompatActivity {
             }
         });
 
+
     }
+
     private void signOut(){
         FirebaseAuth.getInstance().signOut();
 

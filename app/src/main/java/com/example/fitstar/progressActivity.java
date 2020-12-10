@@ -50,7 +50,9 @@ public class progressActivity extends AppCompatActivity {
         progress=(avg/5)*100;
 
         Pb.setProgress((int) progress);
-        tvProg.setText(Float.toString(progress));
+        int a=(int) progress;
+
+        tvProg.setText(Integer.toString(a));
 
 
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +79,8 @@ public class progressActivity extends AppCompatActivity {
                 progress=(avg/5)*100;
 
                 Pb.setProgress((int) progress);
-                tvProg.setText(Float.toString(progress));
+                int a= (int) progress;
+                tvProg.setText(Integer.toString(a));
                 
             }
         });

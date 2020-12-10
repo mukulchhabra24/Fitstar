@@ -10,9 +10,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView1"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="461dp"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,6 +26,7 @@
         android:layout_height="30dp"
         android:layout_below="@+id/btnSignOut"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/f"
         android:text="Choose Your excercise "
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView1"
@@ -35,19 +36,33 @@
 
     <Button
         android:id="@+id/btnProgress"
-        android:layout_width="match_parent"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recyclerView1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
-        android:text="Calculate the effectiveness of your workout" />
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:background="@drawable/rounbtn"
+        android:fontFamily="@font/f"
+        android:text="Effectiveness of your workout"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnPrev"
-        android:layout_width="match_parent"
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnProgress"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
-        android:text="Personal Tracker" />
+        android:layout_marginEnd="58dp"
+        android:layout_marginRight="58dp"
+        android:background="@drawable/rounbtn"
+        android:fontFamily="@font/f"
+        android:text="Personal Tracker"
+        android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/btnSignOut"
@@ -55,12 +70,13 @@
         android:layout_height="28dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/rounbtn"
 
 
+        android:fontFamily="@font/f"
         android:text="Sign Out"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="#FFFFFF"

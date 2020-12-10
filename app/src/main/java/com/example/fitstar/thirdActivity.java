@@ -51,8 +51,8 @@ public class thirdActivity extends AppCompatActivity {
             public void onClick(View v) {
                 getRating=ratingBar.getRating();
                 r.add(getRating);
-                //Intent i= new Intent();
-               // i.putExtra("rating", getRating);
+                Intent i= new Intent(thirdActivity.this, Second_Activity.class);
+                startActivity(i);
                 finish();
             }
         });

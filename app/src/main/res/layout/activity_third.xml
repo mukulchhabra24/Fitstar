@@ -8,28 +8,50 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
         android:layout_weight="1"
+        android:fontFamily="@font/f"
         android:text="The muscles that are sore are:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/soreView"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="63dp"
+        android:layout_below="@+id/textView"
         android:layout_alignBottom="@+id/textView"
-        android:layout_marginBottom="-66dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="-75dp"
         android:layout_weight="1"
-        android:text="TextView"
+        android:fontFamily="@font/f"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
         android:id="@+id/TextView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="61dp"
         android:layout_alignBottom="@+id/soreView"
-        android:layout_marginBottom="-63dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="81dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="-61dp"
+        android:fontFamily="@font/f"
         android:text="Enter Level of Soreness"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -39,15 +61,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="70dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginRight="81dp"
         android:numStars="5" />
 
     <Button
         android:id="@+id/btnRating"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView2"
-        android:layout_marginTop="169dp"
-        android:text="Save rating for tracker" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:background="@drawable/rounbtn"
+        android:fontFamily="@font/f"
+        android:text="Save rating for tracker"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

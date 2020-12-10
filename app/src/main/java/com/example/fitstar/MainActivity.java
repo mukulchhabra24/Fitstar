@@ -27,7 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 101;
-    private FirebaseAuth mAuth;
+    public FirebaseAuth mAuth;
     private Button btnGoogle;
 
     GoogleSignInClient mGoogleSignInClient;
